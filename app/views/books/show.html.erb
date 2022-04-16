@@ -8,7 +8,7 @@
         <tb><%= @book.body %></tb>
         <% if @book.user == current_user %>
           <tb><%= link_to "Edit", edit_book_path %></tb>
-          <tb><%= link_to "Destroy", book_path(@book.id), method: :destroy, "data-confirm" => "本当に消しますか？" %></tb>
+          <tb><%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %></tb>
         <% end %>
       </tr>
     </tbody>
