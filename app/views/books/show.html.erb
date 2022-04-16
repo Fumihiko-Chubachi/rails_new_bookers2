@@ -3,7 +3,7 @@
   <table>
     <tbody>
       <tr>
-        <tb><%= link_to image_tag(@book.user.get_profile_image(100,100)) %><%= link_to @user.name, user_path(@user) %></tb>
+        <tb><%= link_to image_tag(@book.user.get_profile_image(100,100)), user_path(@user) %><%= link_to @user.name, user_path(@user) %></tb>
         <tb><%= @book.title %> </tb>
         <tb><%= @book.body %></tb>
         <% if @book.user == current_user %>
