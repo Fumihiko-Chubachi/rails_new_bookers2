@@ -10,8 +10,12 @@
     <th>introduction</th>
     <th><%= @user.introduction %></th>
   </tr>
-
-  <p><%= link_to "プロフィール編集", edit_user_path %></p>
+  <!--他人のプロフィール編集防止機能追加-->
+  <% if @user == current_user %>
+    <p><%= link_to "プロフィール編集", edit_user_path %></p>
+  <% else %>
+    <p><%= link_to "プロフィール編集", user_path(current_user) %></p>
+  <% end %>
 </div>
 
 <!-- ユーザーの投稿一覧 -->
