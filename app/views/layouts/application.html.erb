@@ -25,10 +25,6 @@
               <% if user_signed_in? %>
 
                 <li>
-                  <%= link_to '投稿フォーム', new_book_path, class:"nav-link text-light" %>
-                </li>
-
-                <li>
                   <%= link_to user_path(current_user.id), class:"nav-link text-light" do %>
                     <span><i class="fas fa-home"></i> Home </span>
                   <% end %>
@@ -50,16 +46,24 @@
                 </li>
               <% else %>
                 <li>
-                  <%= link_to 'Home', root_path, class:"nav-link text-light" %>
+                  <%= link_to root_path, class:"nav-link text-light" do %>
+                    <span><i class="fas fa-home"></i> Home </span>
+                  <% end %>
                 </li>
                 <li>
-                  <%= link_to 'About', '/home/about', class:"nav-link text-light" %>
+                  <%= link_to '/home/about', class:"nav-link text-light" do %>
+                    <span><i class="fas fa-link"></i> About </span>
+                  <% end %>
                 </li>
                 <li>
-                  <%= link_to 'Sign up', new_user_registration_path, class:"nav-link text-light" %>
+                  <%= link_to new_user_registration_path, class:"nav-link text-light" do %>
+                    <span><i class="fas fa-user-plus"></i> Sign up </span>
+                  <% end %>
                 </li>
                 <li>
-                  <%= link_to 'Log in', new_user_session_path, class:"nav-link text-light" %>
+                  <%= link_to new_user_session_path, class:"nav-link text-light" do %>
+                    <span><i class="fas fa-sign-in-alt"></i> Log in </span>
+                  <% end %>
                 </li>
               <% end %>
             </ul>
@@ -67,6 +71,17 @@
         </div>
       </nav>
     </header>
+    
   <%= yield %>
+
+    <footer>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
