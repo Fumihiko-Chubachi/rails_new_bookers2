@@ -23,7 +23,6 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
-
                 <li>
                   <%= link_to user_path(current_user.id), class:"nav-link text-light" do %>
                     <span><i class="fas fa-home"></i> Home </span>
@@ -71,9 +70,10 @@
         </div>
       </nav>
     </header>
-    
-  <%= yield %>
-
+  <main>
+    <p class="notice"><%= notice %></p>
+    <%= yield %>
+  </main>
     <footer>
       <div class="container mt-5">
         <div class="row">
